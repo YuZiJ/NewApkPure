@@ -6,7 +6,7 @@ api = Api()
 # print(y.to_dict())
 
 print("开始访问 ApkPure")
-y = api.search("net.bypass.vpn", first=True, all_page=False)
+y = api.search("com.tencent.mm", first=True, all_page=False)
 dict = y.to_dict()
 app_name = dict['app_name'][0]
 version = dict['version'][0]

@@ -79,7 +79,7 @@ class Scraping(object):
     def search_page(self, query: str, first: bool = True, all_page: bool = False) -> List[str]:
         assert not all([first, all_page]), 'Cannot use all_page with first'
         if not all_page:
-            req = self.con.single_connection(SEARCH_URL.format(query, 1))
+            req = self.con.single_connection(SEARCH_URL.format(query, 0))
             soup = BeautifulSoup(req.content, 'lxml')
             apps = soup.select('li')
 
