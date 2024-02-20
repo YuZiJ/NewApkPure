@@ -92,9 +92,9 @@ class Api(object):
         -------
         ItemList || DataFrame
         """
-        print("calling search_page")
+        print(f"搜索关键词 '{query}'...")
         search = self.__scrap.search_page(query=query, first=first, all_page=all_page)
-        print("calling search_detail")
+        print("访问详情页...")
         self.__scrap.create_thread(self.__scrap.get_detail_search, search)
-        print("collapse result_detail")
+        print("收集结果...")
         return ItemList(data=self.__scrap.results_detail)
